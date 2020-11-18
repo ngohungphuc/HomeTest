@@ -1,6 +1,12 @@
-<input
-  type="number"
-  id="speed-input"
-  placeholder="Set speed"
-  (keyup)="setSpeedValue($event)"
-/>
+<form [formGroup]="speedInputForm">
+  <input
+    type="number"
+    id="speed-input"
+    placeholder="Set speed"
+    formControlName="speedValue"
+    (keyup)="setSpeedValue()"
+  />
+  <div *ngIf="speedCtrl.invalid && (speedCtrl.touched || speedCtrl.dirty)">
+    <span> Speed must below 10 </span>
+  </div>
+</form>
