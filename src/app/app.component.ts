@@ -24,12 +24,10 @@ export class AppComponent {
 
     this.renderer.setStyle(movingBox, 'left', `${horizontalPos}px`);
     this.renderer.setStyle(movingBox, 'top', `${verticalPos}px`);
-    if (this.speedValue > 0) {
-      this.renderer.setStyle(
-        movingBox,
-        'transition',
-        `left ${this.speedValue}s , top ${this.speedValue}s `
-      );
-    }
+    this.renderer.setStyle(
+      movingBox,
+      'transition',
+      `left ${this.speedValue}s , top ${this.speedValue}s `
+    );
   }
 }
