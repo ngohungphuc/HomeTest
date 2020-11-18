@@ -7,9 +7,10 @@ import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 })
 export class AppComponent {
   private speedValue = 0.5;
-  constructor(private renderer: Renderer2) {}
   @ViewChild('movingbox', { read: ElementRef }) movingbox!: ElementRef;
   @ViewChild('wrapper', { read: ElementRef }) wrapper!: ElementRef;
+
+  constructor(private renderer: Renderer2) {}
 
   public setSpeedValue(speedValue: number): void {
     this.speedValue = speedValue;
